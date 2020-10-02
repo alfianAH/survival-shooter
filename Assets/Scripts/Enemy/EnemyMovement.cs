@@ -18,8 +18,7 @@ public class EnemyMovement : MonoBehaviour
         enemyHealth = GetComponent<EnemyHealth>();
         nav = GetComponent<NavMeshAgent>();
     }
-
-
+    
     private void Update ()
     {
         // Move enemy

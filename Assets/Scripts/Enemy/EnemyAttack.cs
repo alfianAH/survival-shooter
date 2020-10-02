@@ -19,7 +19,7 @@ public class EnemyAttack : MonoBehaviour
         
         // Get components
         playerHealth = player.GetComponent <PlayerHealth> ();
-        //enemyHealth = GetComponent<EnemyHealth>();
+        enemyHealth = GetComponent<EnemyHealth>();
         anim = GetComponent <Animator> ();
     }
     
@@ -27,7 +27,7 @@ public class EnemyAttack : MonoBehaviour
     {
         timer += Time.deltaTime;
         
-        if(timer >= timeBetweenAttacks && playerInRange/* && enemyHealth.currentHealth > 0*/)
+        if(timer >= timeBetweenAttacks && playerInRange && enemyHealth.currentHealth > 0)
         {
             Attack ();
         }
