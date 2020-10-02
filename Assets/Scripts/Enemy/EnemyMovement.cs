@@ -20,7 +20,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
 
-    void Update ()
+    private void Update ()
     {
         // Move enemy
         if (enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)

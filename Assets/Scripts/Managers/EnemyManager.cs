@@ -3,9 +3,12 @@
 public class EnemyManager : MonoBehaviour
 {
     public PlayerHealth playerHealth;
-    public GameObject enemy;
+    public GameObject[] enemies;
     public float spawnTime = 3f;
     public Transform[] spawnPoints;
+
+    [SerializeField] private MonoBehaviour factory;
+    public IFactory Factory => factory as IFactory;
 
     private void Start ()
     {
@@ -20,8 +23,9 @@ public class EnemyManager : MonoBehaviour
         
         // Get random number
         int spawnPointIndex = Random.Range (0, spawnPoints.Length);
+        // int spawnEnemy = Random.Range(0, 3);
+        
         // Duplicate enemy
-        Instantiate(enemy, spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
-
+        Factory.FactoryMethod(spawnPointIndex);
     }
 }
