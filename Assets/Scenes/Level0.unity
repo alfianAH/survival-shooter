@@ -1371,6 +1371,7 @@ MonoBehaviour:
   currentHealth: 0
   healthSlider: {fileID: 193925539}
   damageImage: {fileID: 1262293710}
+  fillHealthSlider: {fileID: 788561314}
   deathClip: {fileID: 8300000, guid: d36a393bca4582043982db9089e1694f, type: 3}
   flashSpeed: 5
   flashColour: {r: 1, g: 0, b: 0, a: 0.15686275}

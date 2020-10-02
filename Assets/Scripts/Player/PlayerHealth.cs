@@ -7,7 +7,8 @@ public class PlayerHealth : MonoBehaviour
     public int startingHealth = 100;
     public int currentHealth;
     public Slider healthSlider;
-    public Image damageImage;
+    public Image damageImage,
+        fillHealthSlider;
     public AudioClip deathClip;
     public float flashSpeed = 5f;
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
@@ -28,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
         playerShooting = GetComponentInChildren<PlayerShooting>();
 
         currentHealth = startingHealth;
+        ChangeHealthColor();
     }
     
     private void Update()
@@ -37,6 +39,25 @@ public class PlayerHealth : MonoBehaviour
             : Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
 
         damaged = false;
+    }
+    
+    /// <summary>
+    /// Change Health color
+    /// </summary>
+    private void ChangeHealthColor()
+    {
+        if (currentHealth > 70f)
+        {
+            fillHealthSlider.color = Color.green;
+        }
+        else if (currentHealth > 30f && currentHealth <= 70f)
+        {
+            fillHealthSlider.color = Color.yellow;
+        }
+        else
+        {
+            fillHealthSlider.color = Color.red;
+        }
     }
 
     /// <summary>
@@ -49,7 +70,7 @@ public class PlayerHealth : MonoBehaviour
         
         currentHealth -= amount;
         healthSlider.value = currentHealth;
-        
+        ChangeHealthColor();
         playerAudio.Play();
         
         if (currentHealth <= 0 && !isDead)
