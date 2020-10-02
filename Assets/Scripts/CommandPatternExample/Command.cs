@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace CommandPattern
+namespace CommandPatternExample
 {
     public abstract class Command
     {

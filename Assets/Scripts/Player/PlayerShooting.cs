@@ -55,7 +55,7 @@ public class PlayerShooting : MonoBehaviour
     /// <summary>
     /// Shoot enemy
     /// </summary>
-    private void Shoot()
+    public void Shoot()
     {
         timer = 0f;
         

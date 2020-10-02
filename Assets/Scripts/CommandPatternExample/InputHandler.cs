@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CommandPattern
+namespace CommandPatternExample
 {
     public class InputHandler : MonoBehaviour
     {
         [Tooltip("The box we control with keys.")]
         public Transform boxTransform;
         [Tooltip("Stores all commands for replay and button.")]
-        public static List<Command> OldCommands = new List<Command>();
+        public static List<CommandPatternExample.Command> OldCommands = new List<CommandPatternExample.Command>();
         [Tooltip("If we should start the replay")]
         public static bool ShouldStartReplay;
     
         [Tooltip("The different keys we need")]
-        private Command buttonW,
+        private CommandPatternExample.Command buttonW,
             buttonS,
             buttonA,
             buttonD,

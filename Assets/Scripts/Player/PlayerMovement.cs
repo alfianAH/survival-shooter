@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
         WalkingAnimation(horizontal, vertical);
     }
 
-    private void WalkingAnimation(float horizontal, float vertical)
+    public void WalkingAnimation(float horizontal, float vertical)
     {
         animator.SetBool("IsWalking", horizontal != 0f || vertical != 0f);
     }
@@ -45,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     /// </summary>
     /// <param name="horizontal"></param>
     /// <param name="vertical"></param>
-    private void Move(float horizontal, float vertical)
+    public void Move(float horizontal, float vertical)
     {
         movement.Set(horizontal, 0f, vertical);
         
