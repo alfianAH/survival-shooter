@@ -4,7 +4,7 @@ public class PlayerDetection : MonoBehaviour
 {
     public GameOverManager gameOverManager;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Enemy") && !other.isTrigger)
         {

@@ -32,6 +32,7 @@ public class GameOverManager : MonoBehaviour
 
     public void ShowWarning(float enemyDistance)
     {
+        warningText.gameObject.SetActive(true);
         warningText.text = $"! {Mathf.RoundToInt(enemyDistance)} m";
         anim.SetTrigger("Warning");
     }
