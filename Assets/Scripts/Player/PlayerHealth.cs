@@ -16,7 +16,7 @@ public class PlayerHealth : MonoBehaviour
     private Animator anim;
     private AudioSource playerAudio;
     private PlayerMovement playerMovement;
-    PlayerShooting playerShooting;
+    private PlayerShooting playerShooting;
     private bool isDead,
         damaged;
     
@@ -46,11 +46,11 @@ public class PlayerHealth : MonoBehaviour
     /// </summary>
     private void ChangeHealthColor()
     {
-        if (currentHealth > 70f)
+        if (currentHealth > 70)
         {
             fillHealthSlider.color = Color.green;
         }
-        else if (currentHealth > 30f && currentHealth <= 70f)
+        else if (currentHealth > 30 && currentHealth <= 70)
         {
             fillHealthSlider.color = Color.yellow;
         }
@@ -69,6 +69,7 @@ public class PlayerHealth : MonoBehaviour
         damaged = true;
         
         currentHealth -= amount;
+        
         healthSlider.value = currentHealth;
         ChangeHealthColor();
         playerAudio.Play();
@@ -76,6 +77,20 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth <= 0 && !isDead)
         {
             Death();
+        }
+    }
+    
+    /// <summary>
+    /// Add Health
+    /// </summary>
+    /// <param name="amount"></param>
+    public void AddHealth(int amount)
+    {
+        if(currentHealth > 0 && !isDead)
+        {
+            currentHealth += amount;
+            healthSlider.value = currentHealth;
+            ChangeHealthColor();
         }
     }
 

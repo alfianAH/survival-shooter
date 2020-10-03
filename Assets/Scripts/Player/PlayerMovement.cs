@@ -4,18 +4,20 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 6f;
-
+    
     private Vector3 movement;
     private Animator animator;
     private Rigidbody playerRigidbody;
     
     private int floorMask;
-    private float camRayLength = 100f;
+    private float camRayLength = 100f,
+        originSpeed;
 
     private void Awake()
     {
         // Get mask value from layer "Floor"
         floorMask = LayerMask.GetMask("Floor");
+        originSpeed = speed;
         
         // Get components
         animator = GetComponent<Animator>();
@@ -33,6 +35,11 @@ public class PlayerMovement : MonoBehaviour
         Move(horizontal, vertical);
         Turning();
         WalkingAnimation(horizontal, vertical);
+    }
+
+    public void ResetSpeed()
+    {
+        speed = originSpeed;
     }
 
     public void WalkingAnimation(float horizontal, float vertical)
