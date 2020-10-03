@@ -1486,6 +1486,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1468808607}
   playerShooting: {fileID: 1913946049}
+  playerHealth: {fileID: 1468808610}
 --- !u!4 &1468808609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400080, guid: f1d84cc28597f5641a3d9cbc4df7e306,
