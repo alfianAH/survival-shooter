@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -26,22 +25,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        // Get horizontal axis _
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        
-        // Get vertical axis |
-        float vertical = Input.GetAxisRaw("Vertical");
-        
-        Move(horizontal, vertical);
         Turning();
-        WalkingAnimation(horizontal, vertical);
     }
-
+    
+    /// <summary>
+    /// Reset speed to normal
+    /// </summary>
     public void ResetSpeed()
     {
         speed = originSpeed;
     }
-
+    
+    /// <summary>
+    /// Walking Animation 
+    /// </summary>
+    /// <param name="horizontal"></param>
+    /// <param name="vertical"></param>
     public void WalkingAnimation(float horizontal, float vertical)
     {
         animator.SetBool("IsWalking", horizontal != 0f || vertical != 0f);

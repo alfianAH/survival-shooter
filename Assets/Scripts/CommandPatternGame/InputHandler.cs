@@ -7,13 +7,13 @@ namespace CommandPatternGame
     {
         public PlayerMovement playerMovement;
         public PlayerShooting playerShooting;
-        
+        public PlayerHealth playerHealth;
         private Queue<Command> commands = new Queue<Command>();
         
         private void FixedUpdate()
         {
             Command moveCommand = InputMovementHandling();
-            if (moveCommand != null)
+            if (moveCommand != null && playerHealth.currentHealth > 0)
             {
                 commands.Enqueue(moveCommand);
                 moveCommand.Execute();
@@ -28,7 +28,11 @@ namespace CommandPatternGame
                 shootCommand.Execute();
             }
         }
-
+        
+        /// <summary>
+        /// Keys for movement
+        /// </summary>
+        /// <returns></returns>
         private Command InputMovementHandling()
         {
             if (Input.GetKey(KeyCode.W))
