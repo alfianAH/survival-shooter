@@ -68,10 +68,11 @@ public class PlayerShooting : MonoBehaviour
         
         // Enable gun line and set position
         gunLine.enabled = true;
-        gunLine.SetPosition(0, transform.position);
+        var position = transform.position;
+        gunLine.SetPosition(0, position);
         
         // Set ray shoot position and direction
-        shootRay.origin = transform.position;
+        shootRay.origin = position;
         shootRay.direction = transform.forward;
         
         if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))

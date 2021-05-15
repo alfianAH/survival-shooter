@@ -11,7 +11,8 @@ public class EnemyAttack : MonoBehaviour
     private EnemyHealth enemyHealth;
     private bool playerInRange;
     private float timer;
-    
+    private static readonly int PlayerDead = Animator.StringToHash("PlayerDead");
+
     private void Awake ()
     {
         player = GameObject.FindGameObjectWithTag ("Player");
@@ -34,7 +35,7 @@ public class EnemyAttack : MonoBehaviour
         // Trigger animation if player's health is less or equals to zero 
         if (playerHealth.currentHealth <= 0)
         {
-            anim.SetTrigger("PlayerDead");
+            anim.SetTrigger(PlayerDead);
         }
     }
     

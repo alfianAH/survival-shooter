@@ -15,7 +15,9 @@ public class EnemyHealth : MonoBehaviour
     private CapsuleCollider capsuleCollider;
     private bool isDead,
         isSinking;
-    
+
+    private static readonly int Dead = Animator.StringToHash("Dead");
+
     private void Awake ()
     {
         // Get components
@@ -69,7 +71,7 @@ public class EnemyHealth : MonoBehaviour
         
         capsuleCollider.isTrigger = true;
         
-        anim.SetTrigger ("Dead");
+        anim.SetTrigger (Dead);
         
         // Play death audio
         enemyAudio.clip = deathClip;

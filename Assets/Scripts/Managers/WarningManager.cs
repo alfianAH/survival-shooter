@@ -5,7 +5,8 @@ public class WarningManager : MonoBehaviour
 {
     public Text warningText;
     private Animator anim;
-    
+    private static readonly int Warning = Animator.StringToHash("Warning");
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -15,6 +16,6 @@ public class WarningManager : MonoBehaviour
     {
         warningText.gameObject.SetActive(true);
         warningText.text = $"! {Mathf.RoundToInt(enemyDistance)} m";
-        anim.SetTrigger("Warning");
+        anim.SetTrigger(Warning);
     }
 }

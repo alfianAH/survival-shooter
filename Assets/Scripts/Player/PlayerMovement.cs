@@ -12,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     private float camRayLength = 100f,
         originSpeed;
 
+    private static readonly int IsWalking = Animator.StringToHash("IsWalking");
+
     private void Awake()
     {
         // Get mask value from layer "Floor"
@@ -43,7 +45,7 @@ public class PlayerMovement : MonoBehaviour
     /// <param name="vertical"></param>
     public void WalkingAnimation(float horizontal, float vertical)
     {
-        animator.SetBool("IsWalking", horizontal != 0f || vertical != 0f);
+        animator.SetBool(IsWalking, horizontal != 0f || vertical != 0f);
     }
     
     /// <summary>

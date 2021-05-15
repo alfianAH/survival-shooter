@@ -8,7 +8,7 @@ namespace CommandPatternGame
         public PlayerMovement playerMovement;
         public PlayerShooting playerShooting;
         public PlayerHealth playerHealth;
-        private Queue<Command> commands = new Queue<Command>();
+        private readonly Queue<Command> commands = new Queue<Command>();
         
         private void FixedUpdate()
         {
@@ -23,10 +23,7 @@ namespace CommandPatternGame
         private void Update()
         {
             Command shootCommand = InputShootHandling();
-            if (shootCommand != null)
-            {
-                shootCommand.Execute();
-            }
+            shootCommand?.Execute();
         }
         
         /// <summary>

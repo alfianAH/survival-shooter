@@ -8,7 +8,7 @@ public class EnemyManager : MonoBehaviour
     public Transform[] spawnPoints;
 
     [SerializeField] private MonoBehaviour factory;
-    public IFactory Factory => factory as IFactory;
+    private IFactory Factory => factory as IFactory;
 
     private void Start ()
     {

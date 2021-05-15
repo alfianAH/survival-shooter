@@ -20,7 +20,9 @@ public class PlayerHealth : MonoBehaviour
     private PlayerShooting playerShooting;
     private bool isDead,
         damaged;
-    
+
+    private static readonly int Die = Animator.StringToHash("Die");
+
     private void Awake()
     {
         // Get Components
@@ -104,7 +106,7 @@ public class PlayerHealth : MonoBehaviour
 
         playerShooting.DisableEffects();
         
-        anim.SetTrigger("Die"); // Play animation
+        anim.SetTrigger(Die); // Play animation
         
         // Play audio
         playerAudio.clip = deathClip;
