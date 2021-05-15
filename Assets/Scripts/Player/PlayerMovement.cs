@@ -2,6 +2,31 @@
 
 public class PlayerMovement : MonoBehaviour
 {
+    #region Singleton
+
+    private static PlayerMovement instance;
+    private const string Log = nameof(PlayerMovement);
+
+    public static PlayerMovement Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<PlayerMovement>();
+
+                if (instance == null)
+                {
+                    Debug.LogError($"{Log} not found");
+                }
+            }
+
+            return instance;
+        }
+    }
+
+    #endregion
+    
     public float speed = 6f;
     
     private Vector3 movement;

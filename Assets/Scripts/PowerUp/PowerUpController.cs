@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,9 +8,15 @@ public class PowerUpController : MonoBehaviour
     [SerializeField] private PowerUp powerUpItem;
     [SerializeField] private float xAxis,
         zAxis;
-    [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private bool isPowerUpAvailable;
     
+    private PlayerMovement playerMovement;
+
+    private void Awake()
+    {
+        playerMovement = PlayerMovement.Instance;
+    }
+
     private void Update()
     {
         if (!isPowerUpAvailable)

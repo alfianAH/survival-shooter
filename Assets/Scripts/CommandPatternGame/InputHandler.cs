@@ -5,14 +5,17 @@ namespace CommandPatternGame
 {
     public class InputHandler : MonoBehaviour
     {
-        public PlayerMovement playerMovement;
         public PlayerShooting playerShooting;
+        
         private PlayerHealth playerHealth;
+        private PlayerMovement playerMovement;
+        
         private readonly Queue<Command> commands = new Queue<Command>();
 
         private void Awake()
         {
             playerHealth = PlayerHealth.Instance;
+            playerMovement = PlayerMovement.Instance;
         }
 
         private void FixedUpdate()

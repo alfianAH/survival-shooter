@@ -53,7 +53,7 @@ public class PlayerHealth : MonoBehaviour
         // Get Components
         anim = GetComponent<Animator>();
         playerAudio = GetComponent<AudioSource>();
-        playerMovement = GetComponent<PlayerMovement>();
+        playerMovement = PlayerMovement.Instance;
         playerShooting = GetComponentInChildren<PlayerShooting>();
 
         currentHealth = startingHealth;
