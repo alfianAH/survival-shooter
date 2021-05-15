@@ -2,13 +2,14 @@
 
 public class PlayerDetection : MonoBehaviour
 {
-    public WarningManager warningManager;
     public GameObject warningText;
     private PlayerHealth playerHealth;
+    private WarningManager warningManager;
     
     private void Awake()
     {
         playerHealth = PlayerHealth.Instance;
+        warningManager = WarningManager.Instance;
     }
 
     private void OnTriggerStay(Collider other)
