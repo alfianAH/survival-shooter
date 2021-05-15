@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -7,7 +8,15 @@ public class EnemyManager : MonoBehaviour
     public Transform[] spawnPoints;
 
     [SerializeField] private MonoBehaviour factory;
+
+    private PlayerHealth playerHealth;
+    
     private IFactory Factory => factory as IFactory;
+
+    private void Awake()
+    {
+        playerHealth = PlayerHealth.Instance;
+    }
 
     private void Start ()
     {
@@ -18,7 +27,7 @@ public class EnemyManager : MonoBehaviour
     private void Spawn ()
     {
         // If player is dead, then don't make new enemy
-        if (PlayerHealth.Instance.currentHealth <= 0f) return;
+        if (playerHealth.currentHealth <= 0f) return;
         
         // Get random number
         int spawnPointIndex = Random.Range (0, spawnPoints.Length);

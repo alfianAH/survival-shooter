@@ -7,8 +7,8 @@ public class PlayerHealth : MonoBehaviour
     #region Singleton
 
     private static PlayerHealth instance;
-    private static readonly string log = nameof(PowerUp);
-    
+    private const string Log = nameof(PlayerHealth);
+
     public static PlayerHealth Instance
     {
         get
@@ -19,7 +19,7 @@ public class PlayerHealth : MonoBehaviour
 
                 if (instance == null)
                 {
-                    Debug.LogError($"{log} not found");
+                    Debug.LogError($"{Log} not found");
                 }
             }
 

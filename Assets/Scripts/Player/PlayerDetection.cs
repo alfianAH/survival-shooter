@@ -4,10 +4,16 @@ public class PlayerDetection : MonoBehaviour
 {
     public WarningManager warningManager;
     public GameObject warningText;
+    private PlayerHealth playerHealth;
+    
+    private void Awake()
+    {
+        playerHealth = PlayerHealth.Instance;
+    }
 
     private void OnTriggerStay(Collider other)
     {
-        if (PlayerHealth.Instance.currentHealth <= 0)
+        if (playerHealth.currentHealth <= 0)
         {
             warningText.gameObject.SetActive(false);
             return;
