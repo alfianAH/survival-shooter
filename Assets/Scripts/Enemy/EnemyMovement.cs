@@ -11,10 +11,10 @@ public class EnemyMovement : MonoBehaviour
     private void Awake ()
     {
         // Get player
-        player = GameObject.FindGameObjectWithTag ("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         
         // Get components
-        playerHealth = player.GetComponent<PlayerHealth>();
+        playerHealth = PlayerHealth.Instance;
         enemyHealth = GetComponent<EnemyHealth>();
         nav = GetComponent<NavMeshAgent>();
     }

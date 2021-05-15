@@ -4,6 +4,31 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    #region Singleton
+
+    private static PlayerHealth instance;
+    private static readonly string log = nameof(PowerUp);
+    
+    public static PlayerHealth Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindObjectOfType<PlayerHealth>();
+
+                if (instance == null)
+                {
+                    Debug.LogError($"{log} not found");
+                }
+            }
+
+            return instance;
+        }
+    }
+
+    #endregion
+    
     public int startingHealth = 100;
     public int currentHealth;
     public Slider healthSlider;

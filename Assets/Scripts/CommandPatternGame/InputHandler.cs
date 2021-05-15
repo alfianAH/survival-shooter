@@ -7,9 +7,14 @@ namespace CommandPatternGame
     {
         public PlayerMovement playerMovement;
         public PlayerShooting playerShooting;
-        public PlayerHealth playerHealth;
+        private PlayerHealth playerHealth;
         private readonly Queue<Command> commands = new Queue<Command>();
-        
+
+        private void Awake()
+        {
+            playerHealth = PlayerHealth.Instance;
+        }
+
         private void FixedUpdate()
         {
             Command moveCommand = InputMovementHandling();

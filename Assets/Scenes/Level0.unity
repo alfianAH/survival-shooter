@@ -1052,7 +1052,7 @@ PrefabInstance:
     - target: {fileID: 4162092451087522593, guid: 993eec28b691dd941afa6418d89cb0a7,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4162092451088008961, guid: 993eec28b691dd941afa6418d89cb0a7,
         type: 3}
@@ -1176,7 +1176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a99222b1e4a384e923ac7e86efc709, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 1468808610}
   enemies:
   - {fileID: 4639171325855713224, guid: c6dca7379f11ac645b1431ac299ea40f, type: 3}
   - {fileID: 100000, guid: 3688f3f3f312c984fa78e00c09819e6c, type: 3}
@@ -1823,7 +1822,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 1468808607}
   playerShooting: {fileID: 1913946049}
-  playerHealth: {fileID: 1468808610}
 --- !u!4 &1468808609 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400080, guid: f1d84cc28597f5641a3d9cbc4df7e306,
@@ -1902,7 +1900,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   warningManager: {fileID: 1558365392}
   warningText: {fileID: 402702598}
-  playerHealth: {fileID: 1468808610}
 --- !u!1 &1469678609
 GameObject:
   m_ObjectHideFlags: 0

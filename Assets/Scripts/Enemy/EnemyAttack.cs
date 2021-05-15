@@ -18,7 +18,7 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag ("Player");
         
         // Get components
-        playerHealth = player.GetComponent <PlayerHealth> ();
+        playerHealth = PlayerHealth.Instance;
         enemyHealth = GetComponent<EnemyHealth>();
         anim = GetComponent <Animator> ();
     }

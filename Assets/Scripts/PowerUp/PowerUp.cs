@@ -2,7 +2,6 @@
 
 public class PowerUp : MonoBehaviour
 {
-    [SerializeField] private PlayerHealth playerHealth;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private int additionalHealth = 30,
         additionalSpeed = 3;
@@ -21,7 +20,7 @@ public class PowerUp : MonoBehaviour
         if(other.CompareTag("Player") && !other.isTrigger)
         {
             isTaken = true;
-            playerHealth.AddHealth(additionalHealth);
+            PlayerHealth.Instance.AddHealth(additionalHealth);
             playerMovement.speed += additionalSpeed;
             gameObject.SetActive(false);
         }
