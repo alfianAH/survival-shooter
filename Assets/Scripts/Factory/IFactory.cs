@@ -2,5 +2,5 @@
 
 public interface IFactory
 {
-    GameObject FactoryMethod(int tag);
+    GameObject FactoryMethod(int tag, Vector3 position);
 }

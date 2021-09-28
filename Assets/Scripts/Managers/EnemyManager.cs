@@ -3,7 +3,6 @@ using Random = UnityEngine.Random;
 
 public class EnemyManager : MonoBehaviour
 {
-    public GameObject[] enemies;
     public float spawnTime = 3f;
     public Transform[] spawnPoints;
 
@@ -30,10 +29,9 @@ public class EnemyManager : MonoBehaviour
         if (playerHealth.currentHealth <= 0f) return;
         
         // Get random number
-        int spawnPointIndex = Random.Range (0, spawnPoints.Length);
-        // int spawnEnemy = Random.Range(0, 3);
+        int spawnEnemy = Random.Range(0, 3);
         
         // Duplicate enemy
-        Factory.FactoryMethod(spawnPointIndex);
+        Factory.FactoryMethod(spawnEnemy, spawnPoints[spawnEnemy].position);
     }
 }
