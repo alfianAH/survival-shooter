@@ -9,9 +9,9 @@ Project Features:
 ## Getting Started
 1. Copy https://github.com/alfianAH/survival-shooter.git
 2. Go to your command prompt or terminal. (Make sure you have installed git on your computer)
-3. Type ```git clone https://github.com/alfianAH/survival-shooter.git```
+3. Type `git clone https://github.com/alfianAH/survival-shooter.git`
 4. And finally it will be cloned to your computer.
-5. Open it with Unity (Recommended Unity 2019.4.24f1)
+5. Open it with Unity (Recommended Unity 2018.3.3f1)
 
 ## How to Install
 1. Go to [Release tab](https://github.com/alfianAH/survival-shooter/releases)
