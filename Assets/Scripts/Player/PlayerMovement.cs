@@ -52,6 +52,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // Get horizontal input
+        float h = Input.GetAxisRaw("Horizontal");
+        
+        // Get vertical input
+        float v = Input.GetAxisRaw("Vertical");
+
+        // Move diagonally
+        Move(h, v);
         Turning();
     }
     
