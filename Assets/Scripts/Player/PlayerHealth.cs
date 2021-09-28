@@ -1,33 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour
+public class PlayerHealth : SingletonBaseClass<PlayerHealth>
 {
-    #region Singleton
-
-    private static PlayerHealth instance;
-    private const string Log = nameof(PlayerHealth);
-
-    public static PlayerHealth Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<PlayerHealth>();
-
-                if (instance == null)
-                {
-                    Debug.LogError($"{Log} not found");
-                }
-            }
-
-            return instance;
-        }
-    }
-
-    #endregion
-    
     public int startingHealth = 100;
     public int currentHealth;
     public Slider healthSlider;

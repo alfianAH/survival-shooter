@@ -1,33 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class WarningManager : MonoBehaviour
+public class WarningManager : SingletonBaseClass<WarningManager>
 {
-    #region Singleton
-
-    private static WarningManager instance;
-    private const string Log = nameof(WarningManager);
-
-    public static WarningManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<WarningManager>();
-
-                if (instance == null)
-                {
-                    Debug.LogError($"{Log} not found");
-                }
-            }
-
-            return instance;
-        }
-    }
-
-    #endregion
-    
     public Text warningText;
     private Animator anim;
     private static readonly int Warning = Animator.StringToHash("Warning");
